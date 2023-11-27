@@ -1,0 +1,6 @@
+go 1.18
+
+use (
+    ./go.part1
+    ./go.part2
+)
