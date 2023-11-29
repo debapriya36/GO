@@ -1,6 +1,9 @@
 go 1.18
 
 use (
-    ./go.part1
-    ./go.part2
+	./go.part1
+	./go.part2
+	./go.part3
+	./go.part4
+	./go.part5
 )

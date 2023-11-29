@@ -62,6 +62,11 @@ func main() { // entry point of the program
 	checkNilErr(err)
 	fmt.Println("length:", length)
 
+	s := "http://lco.dev"
+	fmt.Println(s)
+	// url parsing
+	//	u, err := s.Parse(s)
+
 }
 
 type User struct {

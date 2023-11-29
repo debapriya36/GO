@@ -26,4 +26,5 @@
 - keyword with small first letter is private , keyword with capital first letter is public
 - memory allocation , deallocation is done by go automatically [ garbage collection]
 - nil = NULL
-
+- slices are like array but they are dynamic in nature[ they can grow and shrink  using append]
+- always close request body whenever we call  
