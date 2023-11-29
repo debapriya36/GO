@@ -4,15 +4,39 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"strings"
 )
 
-const url string = "http://localhost:3000/post-a-shit"
+const url string = "http://localhost:3000/me"
+
+func HandleGetReq(url string) {
+	resp, err := http.Get(url)
+	CheckNilErr(err)
+	defer resp.Body.Close()
+	contest, err := io.ReadAll(resp.Body)
+	CheckNilErr(err)
+	finalResponse := string(contest)
+	fmt.Println("finalResponse:", finalResponse)
+
+}
+
+type User struct {
+	Name     string `json:"name"`
+	Age      int    `json:"age"`
+	Email    string `json:"email"`
+	Password string `json:"-"` // ignore the password field
+}
 
 func main() {
 	fmt.Println("Welcome to handling URLs in golang")
 	// handleGetReq()
-	handlePostReq()
+	// handlePostReq()
+	// HandleGetReq(url)
+	// http.HandleFunc("/me", HandleMal)
+// 	fmt.Println("url", url)
+	
+}
+
+func HandleMal(w http.ResponseWriter, r *http.Request) {
 
 }
 
@@ -43,21 +67,21 @@ func CheckNilErr(err error) {
 	}
 }
 
-func handlePostReq() {
-	payload := strings.NewReader(`
-	{
-		"coursename":"Let's go with golang",
-		"price": 0,
-		"platform":"learnCodeOnline.in"
-	}
-`)
+// func handlePostReq() {
+// 	payload := strings.NewReader(`
+// 	{
+// 		"coursename":"Let's go with golang",
+// 		"price": 0,
+// 		"platform":"learnCodeOnline.in"
+// 	}
+// `)
 
-	resp, err := http.Post(url, "application/json", payload)
-	CheckNilErr(err)
-	defer resp.Body.Close()
-	fmt.Println("response status", resp.Status)
-	content,err := io.ReadAll(resp.Body)
-	CheckNilErr(err)
-	fmt.Println("content:", string(content))
+// 	resp, err := http.Post(url, "application/json", payload)
+// 	CheckNilErr(err)
+// 	defer resp.Body.Close()
+// 	fmt.Println("response status", resp.Status)
+// 	content,err := io.ReadAll(resp.Body)
+// 	CheckNilErr(err)
+// 	fmt.Println("content:", string(content))
 
-}
+// }

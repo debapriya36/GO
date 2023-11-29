@@ -6,4 +6,5 @@ use (
 	./go.part3
 	./go.part4
 	./go.part5
+	./go.part6
 )

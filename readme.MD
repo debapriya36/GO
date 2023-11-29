@@ -6,7 +6,7 @@
 - lexer does a lot of work(putting semiclon etc)
 ----------------------------------------------------------
 ### go help 
-
+- fmt for formatted I/O.
 - go mod init golang
 - go run .
 - go env GOPATH : to see the path of the go workspace in my machine
@@ -28,3 +28,4 @@
 - nil = NULL
 - slices are like array but they are dynamic in nature[ they can grow and shrink  using append]
 - always close request body whenever we call  
+- everything come from web is in byte format , so we need to convert it to string
