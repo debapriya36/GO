@@ -29,3 +29,5 @@
 - slices are like array but they are dynamic in nature[ they can grow and shrink  using append]
 - always close request body whenever we call  
 - everything come from web is in byte format , so we need to convert it to string
+- Fatal Err is when code from this point will break entire app(ex- DB connection err)
+- Panic Err is when code from this point will only break a small func(ex - a API call err)
